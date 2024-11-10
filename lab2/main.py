@@ -10,13 +10,13 @@ z = 4*x1 + 2*x2 (max)
 from scipy.optimize import linprog
 
 
-coefs = [-4, -2]
+coefs = [1, -3]
 A = [
-    [-1, 2],
+    [1, 2],
+    [-1, 1],
     [1, 1],
-    [3, -1],
 ]
-A0 = [6, 9, 15]
+A0 = [4, -1, 8]
 
 res = linprog(coefs, A_ub=A, b_ub=A0,  bounds=[(0, None), (0, None)], method='simplex')
 x1 = res.x[0]
